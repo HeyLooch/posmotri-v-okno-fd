@@ -74,6 +74,7 @@ ol {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .search-form {
@@ -122,7 +123,7 @@ ol {
 }
 
 .search-form__textfield {
-  width: 225px;
+  min-width: 225px;
   appearance: none;
   font-family: inherit;
   font-style: normal;
@@ -160,7 +161,7 @@ ol {
 }
 
 .search-form__submit-button {
-  width: 194px;
+  min-width: 194px;
   align-self: flex-end;
 }
 
@@ -168,7 +169,7 @@ ol {
   grid-area: details;
   width: 100%;
   height: 100%;
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
 }
 
 .title {
@@ -197,7 +198,7 @@ ol {
 }
 
 .cards-list-item {
-  font-family: Oswald;
+  font-family: Oswald, sans-serif;
   color: #fff;
 }
 
@@ -206,8 +207,41 @@ ol {
 }
 
 .content__card-link {
+  display: block;
   color: inherit;
   text-decoration: none;
+}
+
+/* Уважаемая ревьюер, спасибо Вам за проделанную работу,
+что оценили меня) Касаемо псевдоклассов ссылочного тега а: 
+я нагуглил, что его поведение по умолчанию уже соответствует
+ нашему ТЗ. То есть он ловит фокус только с клавиатуры, 
+ поэтому, с Вашего позволения, просто возьму и удалю ему
+  фокусные состояния, но оставлю хавэр и эктив. */
+
+.content__card-link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+
+.content__card-link:active {
+  background-color: #545050;
+}
+
+/* Извините, у нас в html не было написано такого 
+класса как content__card-link_current, был только 
+content__card-link. Вы не по старому ТЗ смотрите? 
+В макете активное состояние у content__card-link
+отображено просто как серый бэкграунд у секции
+content__video-card-description-container.
+Дописал как Вы сказали. Надеюсь понял правильно. */
+
+.content__card-link_current:active {
+  background-color: #545050;
+  color: fff;
+  text-decoration: none;
+  margin: 2px;
 }
 
 .content__video-card {
@@ -215,30 +249,13 @@ ol {
   align-items: flex-start;
 }
 
-.content__video-card:focus {
-  outline: none;
-}
-
-.content__video-card:focus-visible {
-  outline: 1px solid inherit;
-}
-
-.content__video-card:hover {
-  cursor: pointer;
-  text-decoration: underline;
-  text-decoration-skip-ink: none;
-}
-
-.content__video-card:active {
-  background-color: #545050;
-}
-
 .content__video-card-description-container {
   flex-grow: 1;
 }
 
 .content__video-card-title {
-  width: 196px;
+  width: 100%;
+  max-width: 196px;
   font-size: 30px;
   font-weight: 700;
   line-height: 30px;
@@ -265,7 +282,7 @@ ol {
 }
 
 .button {
-  height: 34px;
+  min-height: 34px;
   border: 1px solid #fff;
   font-family: inherit;
   font-size: inherit;
