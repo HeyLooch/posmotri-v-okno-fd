@@ -212,13 +212,6 @@ ol {
   text-decoration: none;
 }
 
-/* Уважаемая ревьюер, спасибо Вам за проделанную работу,
-что оценили меня) Касаемо псевдоклассов ссылочного тега а: 
-я нагуглил, что его поведение по умолчанию уже соответствует
- нашему ТЗ. То есть он ловит фокус только с клавиатуры, 
- поэтому, с Вашего позволения, просто возьму и удалю ему
-  фокусные состояния, но оставлю хавэр и эктив. */
-
 .content__card-link:hover {
   cursor: pointer;
   text-decoration: underline;
@@ -229,19 +222,10 @@ ol {
   background-color: #545050;
 }
 
-/* Извините, у нас в html не было написано такого 
-класса как content__card-link_current, был только 
-content__card-link. Вы не по старому ТЗ смотрите? 
-В макете активное состояние у content__card-link
-отображено просто как серый бэкграунд у секции
-content__video-card-description-container.
-Дописал как Вы сказали. Надеюсь понял правильно. */
-
-.content__card-link_current:active {
+.content__card-link_current {
   background-color: #545050;
-  color: fff;
+  color: #fff;
   text-decoration: none;
-  margin: 2px;
 }
 
 .content__video-card {
